@@ -8,11 +8,12 @@ class ApplicationController < ActionController::Base
   end 
   
   def hello
-    redirect_to sessions_new_path unless session[:name]
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
   end
+
+  private 
   
-  private
-    def require_login
-      redirect_to sessions_new_path unless current_user
-    end
+  def require_logged_in
+    redirect_to controller: 'sessions', action: 'new' unless current_user
+  end
 end
