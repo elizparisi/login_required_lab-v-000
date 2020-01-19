@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end 
   
   def create
-    if 
+    if params[:name].present? redirect_to root_path
   end
   
   def destroy
