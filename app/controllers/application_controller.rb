@@ -7,8 +7,12 @@ class ApplicationController < ActionController::Base
     return session[:name]
   end 
   
+  def hello
+    redirect_to sessions_new_path unless session[:name]
+  end
+  
   private
     def require_login
-      redirect_to login_path unless session.include? :name
+      redirect_to sessions_new_path unless current_user
     end
 end
