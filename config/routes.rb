@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
 
-  get '/the_secret_page', to: 'secrets#show'
+  get '/secrets', to: 'secrets#show'
 end
